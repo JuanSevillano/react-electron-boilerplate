@@ -19,8 +19,8 @@ the app installer for the specific platform.
 ### `react-script`
 
 All react-scripts are available using the prefix "react-" <br />
-i.e: npm run react-start <i> will run the react development server in the browser</i>
-
+<strong> npm run react-start</strong>
+<br/> <i> will run the react development server in the browser</i>
 
 ### Author
 
