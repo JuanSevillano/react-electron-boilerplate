@@ -1,7 +1,8 @@
 .Home {
   display: flex;
+  height: 100%;
   width: 100%;
-  background-color: #FF7300;
+  background-color: #ff7300;
   color: white;
   counter-reset: black;
   flex-direction: column;
@@ -15,6 +16,7 @@
   width: 80px;
   height: 80px;
 }
+
 .ldsripple div {
   position: absolute;
   border: 4px solid #fff;
@@ -22,9 +24,11 @@
   border-radius: 50%;
   animation: lds-ripple 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
+
 .ldsripple div:nth-child(2) {
   animation-delay: -0.5s;
 }
+
 @keyframes lds-ripple {
   0% {
     top: 36px;

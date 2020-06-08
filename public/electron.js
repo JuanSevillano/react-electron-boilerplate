@@ -3,14 +3,30 @@ const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const isDev = require('electron-is-dev')
 
+const myWindows = []
+let mainWindow, secondWindow;
+
 function createWindow() {
     // Create the browser window.
-    const mainWindow = new BrowserWindow({
+    mainWindow = new BrowserWindow({
         width: 300,
         height: 300,
         frame: false,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
+            preload: path.join(__dirname, 'preload.js'),
+            nodeIntegration: true,
+            enableRemoteModule: true
+        }
+    })
+
+    secondWindow = new BrowserWindow({
+        width: 1080,
+        height: 720,
+        frame: false,
+        webPreferences: {
+            preload: path.join(__dirname, 'preload.js'),
+            nodeIntegration: true,
+            enableRemoteModule: true
         }
     })
 
@@ -19,6 +35,12 @@ function createWindow() {
         isDev ?
             'http://localhost:3000' :
             `file://${path.join(__dirname, '../build/index.html')}`
+    )
+
+    secondWindow.loadURL(
+        isDev ?
+            'http://localhost:3000/turner' :
+            `file://${path.join(__dirname, '../build/index.html/turner')}`
     )
 
     // Open the DevTools.

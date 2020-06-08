@@ -1,0 +1,22 @@
+.App_header {
+  position: fixed;
+  width: 100%;
+  height: 20px;
+  padding: 5px;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.App_header > * {
+  flex: 1;
+}
+
+.Dragger {
+  -webkit-app-region: drag;
+}
