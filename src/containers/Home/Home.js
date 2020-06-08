@@ -10,6 +10,7 @@ const Home = props => {
 
     return (
         <div className={classes.Home}>
+
             <Link to={link}>
                 <h1> Generar un turno</h1>
                 <div className={classes.ldsripple}><div></div><div></div></div>

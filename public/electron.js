@@ -22,7 +22,7 @@ function createWindow() {
     secondWindow = new BrowserWindow({
         width: 1080,
         height: 720,
-        frame: false,
+        frame: true,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: true,
@@ -31,20 +31,22 @@ function createWindow() {
     })
 
     // and load the index.html of the app.
+    const localUrl = 'http://localhost:3000/'
     mainWindow.loadURL(
-        isDev ?
-            'http://localhost:3000' :
-            `file://${path.join(__dirname, '../build/index.html')}`
+        isDev ? localUrl : `file://${path.join(__dirname, '../build/index.html')}`
     )
 
     secondWindow.loadURL(
-        isDev ?
-            'http://localhost:3000/turner' :
-            `file://${path.join(__dirname, '../build/index.html/turner')}`
+        isDev ? localUrl : `file://${path.join(__dirname, '../build/index.html')}`
     )
 
     // Open the DevTools.
     // mainWindow.webContents.openDevTools()
+    secondWindow.webContents.openDevTools()
+    secondWindow.webContents.on('did-finish-load', () => {
+        secondWindow.webContents.send('onLocation', { url: 'turner' })
+    })
+    myWindows.push(mainWindow, secondWindow)
 }
 
 // This method will be called when Electron has finished

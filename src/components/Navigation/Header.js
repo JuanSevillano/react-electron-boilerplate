@@ -7,11 +7,7 @@ import classes from './Header.module.css'
 const Header = () => {
 
     const history = useHistory()
-    console.log(history)
-    const backHandler = event => {
-        console.log('holaa')
-        history.push('/')
-    }
+    const backHandler = event => history.push('/')
 
     return (
         <header className={classes.App_header}>
