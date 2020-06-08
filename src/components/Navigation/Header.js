@@ -4,19 +4,27 @@ import { useHistory } from 'react-router-dom'
 import classes from './Header.module.css'
 
 
-const Header = () => {
+const Header = props => {
 
     const history = useHistory()
     const backHandler = event => history.push('/')
+    const isTurnerScreen = !history.location.pathname.includes('turner') ?
+        <span onClick={backHandler}> Back </span>
+        : null
 
     return (
         <header className={classes.App_header}>
-            <span onClick={backHandler}> Back </span>
+            {isTurnerScreen}
             <span className={classes.Dragger}>  </span>
-            <section>
-                <span>-</span>
-                <span>X</span>
-            </section>
+            {
+                isTurnerScreen != null ? (
+                    <section id="window_corner_buttons">
+                        <span>-</span>
+                        <span>x</span>
+                    </section>)
+                    : null
+            }
+
         </header>
     )
 }

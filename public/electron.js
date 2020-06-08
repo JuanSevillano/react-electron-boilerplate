@@ -22,7 +22,7 @@ function createWindow() {
     secondWindow = new BrowserWindow({
         width: 1080,
         height: 720,
-        frame: true,
+        frame: false,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: true,

@@ -6,7 +6,6 @@ window.ipcRenderer = require('electron').ipcRenderer;
 window.addEventListener('DOMContentLoaded', () => {
     const isTurner = window.location.href.includes('turner')
 
-
     // document.getElementById('minimize-button').addEventListener('click', () => {
     //     remote.getCurrentWindow().minimize()
     // })

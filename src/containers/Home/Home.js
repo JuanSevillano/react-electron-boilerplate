@@ -11,13 +11,9 @@ const Home = props => {
         state: { fromHome: true }
     }
 
-
-    ipcRenderer.on('onLocation', (event, { url }) => {
-
-        props.history.push(url)
-
-    })
-
+    // When is secondScreen it receives the url to be loaded 
+    ipcRenderer.on('onLocation', (event, { url }) => { props.history.push(url) })
+    
 
     return (
         <div className={classes.Home}>
