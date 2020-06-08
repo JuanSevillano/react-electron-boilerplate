@@ -2,11 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import classes from './Home.module.css'
 
+const ipcRenderer = window.ipcRenderer
+
+
 const Home = props => {
     const link = {
         pathname: "/turner",
         state: { fromHome: true }
     }
+
+
+    ipcRenderer.on('onLocation', (event, { url }) => {
+
+        props.history.push(url)
+
+    })
+
 
     return (
         <div className={classes.Home}>

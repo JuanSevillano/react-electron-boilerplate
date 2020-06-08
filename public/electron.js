@@ -43,8 +43,8 @@ function createWindow() {
     // Open the DevTools.
     // mainWindow.webContents.openDevTools()
     secondWindow.webContents.openDevTools()
-    secondWindow.webContents.on('did-finish-load', () => {
-        secondWindow.webContents.send('onLocation', { url: 'turner' })
+    secondWindow.webContents.on('dom-ready', () => {
+        secondWindow.webContents.send('onLocation', { url: '/turner' })
     })
     myWindows.push(mainWindow, secondWindow)
 }

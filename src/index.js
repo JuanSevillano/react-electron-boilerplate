@@ -4,13 +4,6 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const ipcRenderer = window.ipcRenderer
-
-console.log(ipcRenderer)
-ipcRenderer.on('onLocation', (event, url) => {
-  console.log('me llegó', url)
-})
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
