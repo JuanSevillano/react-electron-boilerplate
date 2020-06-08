@@ -6,8 +6,8 @@ const isDev = require('electron-is-dev')
 function createWindow() {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 300,
+        height: 300,
         frame: false,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
@@ -22,7 +22,7 @@ function createWindow() {
     )
 
     // Open the DevTools.
-    mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished

@@ -1,15 +1,18 @@
 import React from 'react';
+import { HashRouter as Router } from 'react-router-dom'
+import Home from './containers/Home/Home'
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-               <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+        </header>
+        <Home />
+      </div>
+    </Router>
   );
 }
 
