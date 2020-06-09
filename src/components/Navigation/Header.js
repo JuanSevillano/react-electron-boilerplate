@@ -18,7 +18,7 @@ const Header = props => {
             <span className={classes.Dragger}>  </span>
             {
                 isTurnerScreen != null ? (
-                    <section id="window_corner_buttons">
+                    <section id="window_corner_buttons" className={classes.window_corner_buttons}>
                         <span>-</span>
                         <span>x</span>
                     </section>)
@@ -29,4 +29,4 @@ const Header = props => {
     )
 }
 
-export default Header;
+export default Header

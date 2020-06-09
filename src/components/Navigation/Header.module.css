@@ -20,3 +20,11 @@
 .Dragger {
   -webkit-app-region: drag;
 }
+
+.window_corner_buttons {
+  justify-content: flex-end;
+}
+
+.window_corner_buttons span {
+  margin-right: 20px;
+}

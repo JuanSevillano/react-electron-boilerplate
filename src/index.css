@@ -1,4 +1,23 @@
-div {
+div,
+ul,
+li,
+a,
+html,
+body,
+section,
+article,
+main,
+span,
+button,
+input,
+img,
+video,
+iframe,
+label,
+form,
+nav,
+header,
+footer {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -28,4 +47,10 @@ a {
   text-decoration: none;
   text-transform: none;
   color: inherit;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
 }

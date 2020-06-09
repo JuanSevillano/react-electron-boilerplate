@@ -10,6 +10,15 @@
   align-items: center;
 }
 
+.Home h1 {
+  text-transform: uppercase;
+}
+
+.Home .Link {
+  flex-direction: column;
+  align-items: center;
+}
+
 .ldsripple {
   display: inline-block;
   position: relative;
