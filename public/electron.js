@@ -41,8 +41,10 @@ function createWindow() {
     )
 
     // Open the DevTools.
-    // mainWindow.webContents.openDevTools()
-    secondWindow.webContents.openDevTools()
+    mainWindow.webContents.openDevTools()
+    // secondWindow.webContents.openDevTools()
+
+    // Sending message to home, to make react redirect to /turner path
     secondWindow.webContents.on('dom-ready', () => {
         secondWindow.webContents.send('onLocation', { url: '/turner' })
     })

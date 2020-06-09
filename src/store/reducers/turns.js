@@ -1,17 +1,21 @@
 import * as actionTypes from '../actions/actionTypes'
 import { updateObject } from '../utility'
 
+const initialTurns = new Array(999).fill().map(t => ({ status: actionTypes.ORDER_FREE }))
+
 const initialState = {
-    orders: []
+    turns: initialTurns,
+    currentTurn: 0
 }
 
 const generateTurn = (state, payload) => {
-    const generatedNumber = Math.random() * 100
-    const orders = [...state.orders]
-    orders[generatedNumber] = { status: actionTypes.ORDER_WAITING }
-    console.log('generatedNumber: ', generatedNumber)
-    console.log('updated Orders: ', orders)
-    return updateObject(state)
+    const number = state.turns.findIndex(t => t.status === actionTypes.ORDER_FREE)
+    const updated = [...state.turns]
+    updated[number] = { status: actionTypes.ORDER_WAITING }
+    return updateObject(state, {
+        turns: updated,
+        currentTurn: number
+    })
 }
 
 const reducer = (state = initialState, { type, payload }) => {
